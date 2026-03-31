@@ -38,6 +38,7 @@ const Navbar = () => {
           ? "bg-background/95 backdrop-blur-md shadow-lg py-2"
           : "bg-transparent py-4"
       }`}
+      style={{ color: scrolled ? undefined : 'white' }}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <button onClick={() => handleClick("#hero")} className="flex items-center gap-2">
