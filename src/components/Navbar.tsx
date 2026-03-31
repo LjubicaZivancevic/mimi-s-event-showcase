@@ -38,11 +38,14 @@ const Navbar = () => {
           ? "bg-background/95 backdrop-blur-md shadow-lg py-2"
           : "bg-transparent py-4"
       }`}
+      style={{ color: scrolled ? undefined : 'white' }}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <button onClick={() => handleClick("#hero")} className="flex items-center gap-2">
           <img src={logo} alt="Dekoracije Mimi" className="h-12 w-12 rounded-full object-cover" />
-          <span className="font-heading text-xl font-semibold text-primary">
+          <span className={`font-heading text-xl font-semibold transition-colors duration-500 ${
+            scrolled ? "text-primary" : "text-white"
+          }`}>
             Dekoracije Mimi
           </span>
         </button>
@@ -53,7 +56,11 @@ const Navbar = () => {
             <button
               key={link.href}
               onClick={() => handleClick(link.href)}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+              className={`text-sm font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${
+                scrolled
+                  ? "text-foreground/80 hover:text-primary after:bg-accent"
+                  : "text-white/90 hover:text-white after:bg-white/60"
+              }`}
             >
               {link.label}
             </button>
@@ -63,7 +70,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-primary p-2"
+          className={`lg:hidden p-2 ${scrolled ? "text-primary" : "text-white"}`}
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}

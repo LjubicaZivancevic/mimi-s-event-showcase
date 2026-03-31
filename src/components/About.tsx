@@ -52,6 +52,12 @@ const About = () => (
               bilo nezaboravno.
             </p>
             <p>
+              Posebno se ponosimo radom sa <strong className="text-primary">prirodnim cvećem</strong> — 
+              svežim aranžmanima koji unose toplinu, autentičnost i neponovljiv miris u svaki 
+              prostor. Prirodno cveće dodaje posebnu eleganciju i čini svaku dekoraciju 
+              jedinstvenom i živom.
+            </p>
+            <p>
               Verujemo da svaka prilika zaslužuje poseban dodir — zato radimo blisko sa 
               svakim klijentom kako bismo razumeli njihovu viziju i pretvorili je u stvarnost.
             </p>
